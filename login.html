@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Blockchain Project</title>
+    <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+    <main class="frame" role="main">
+        <h1 class="login">Sign In</h1>
+        <form id="login-form" class="login-form" novalidate>
+            <div class="email">
+                <input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" required />
+            </div>
+            <div class="password">
+                <input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password"
+                    required />
+            </div>
+            <div class="remember_forgot">
+                <label class="remember">
+                    <input type="checkbox" id="remember-me" name="remember" />
+                    Remember me
+                </label>
+                <span class="forgot"><a href="#">Forgot password?</a></span>
+            </div>
+            <button type="submit" class="log">Sign in</button>
+        </form>
+        <p class="reg">
+            New to the platform?
+            <a href="#">Request access</a>
+        </p>
+    </main>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const email = loginForm.email.value.trim();
+            const password = loginForm.password.value.trim();
+
+            if (!email || !password) {
+                alert('Enter both email and password to continue.');
+                return;
+            }
+
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+
+</html>
+
